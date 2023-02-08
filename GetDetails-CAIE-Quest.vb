@@ -15,7 +15,7 @@ Module Module1
         End Sub
         Public Function GetDetails()
             Dim Message As String
-            Message = "PositionX: " + PositionX + "PositionY: " + PositionY + ", width: " + Width + ", height: " + Height + ", ImageFilename:" + ImageFilename
+            Message = "PositionX: " & PositionX & "PositionY: " & PositionY & ", width: " & Width & ", height: " & Height & ", ImageFilename:" & ImageFilename
             Return Message
         End Function
     End Class
@@ -38,13 +38,15 @@ Module Module1
         Public Function GetScenery() As String
             Dim Message As String
             Message = MyBase.GetDetails()
-            Message = Message + "CauseDamage: " + CauseDamage + "" + "DamagePoints: " + DamagePoints
+            Message = Message & "CauseDamage: " & CauseDamage & "" & "DamagePoints: " & DamagePoints
             Return Message
         End Function
     End Class
     Sub Main()
         Dim giftbox As Scenery
         giftbox = New Scenery(150, 150, 50, 75, "box.png", True, 50)
+
+        Console.WriteLine(giftbox.GetScenery)
         Console.ReadKey()
     End Sub
 
